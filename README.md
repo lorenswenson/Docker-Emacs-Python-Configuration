@@ -25,24 +25,7 @@ https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 2) 
 
-To start up emacs in this docker container from bash by default, add the following function and alias to ~/.bashrc
+To start up emacs in this docker container from bash by default, add the code snippet found in .bashrc_snippet to your ~/.bashrc
 
-docker_emacs () {
-    docker run -it \
-           --user $(id -u) \
-           -e DISPLAY=unix$DISPLAY \
-           --workdir=$(pwd) \
-           --volume="/home/$USER:/home/$USER" \
-           --volume="/etc/group:/etc/group:ro" \
-           --volume="/etc/passwd:/etc/passwd:ro" \
-           --volume="/etc/shadow:/etc/shadow:ro" \
-           --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
-           --volume="/tmp:/tmp" \
-           -p 6006:6006 \
-           -v /tmp/.X11-unix:/tmp/.X11-unix \
-           dockeripython emacs \
-           $@
-}
 
-alias emacs='docker_emacs -geometry 280x80 -fn "terminus-10" -bg black -fg yellow'
 
