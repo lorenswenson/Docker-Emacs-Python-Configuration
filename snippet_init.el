@@ -33,7 +33,7 @@
 ;; (elpy-use-ipython)
 
 (setq elpy-rpc-python-command "python3")
-(setq python-shell-interpreter "ipython3")
+(setq python-shell-interpreter "~/dev/Docker-Emacs-Python-Configuration/docker_ipython.sh")
 
 ;; (setq python-shell-interpreter-interactive-arg "")
 
