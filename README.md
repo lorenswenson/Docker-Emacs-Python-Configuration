@@ -76,17 +76,21 @@ Note that the function in the .bashrc_snippet will map your ~/.emacs.d directory
 
 If you want to update anaconda run:
 
-docker pull continuumio/anaconda3
+`docker pull continuumio/anaconda3`
 
-and then rebuild.  Similarly, you need to rebuild the image if you add any packages to docker/requirements.txt
+and then rebuild with
+
+`docker build -t dockerpythonemacs .`
+
+in the docker directory.  Similarly, you need to rebuild the image if you add any packages to docker/requirements.txt
 
 Cheat sheet for keeping installed images tidy: https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 
 These include:
 
-* Removing dangling images: docker system prune
-* Listing images:           docker images -a
-* Removing specific image:  docker rmi *image*
+* Removing dangling images: `docker system prune`
+* Listing images:           `docker images -a`
+* Removing specific image:  `docker rmi *image*`
 
 
 
