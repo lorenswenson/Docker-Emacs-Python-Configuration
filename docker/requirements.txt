@@ -1,0 +1,9 @@
+rlipython
+tensorflow
+elpy
+jedi
+flake8
+autopep8
+yapf
+
+
