@@ -55,7 +55,7 @@ docker_emacs () {
 }
 
 alias emacs='docker_emacs -geometry 280x80 -fn "terminus-10" -bg black -fg yellow'
-'''
+```
 
 Note: This does a lot:
 * It mounts the user home volume into the docker container which is convenient but is a big hole in the container isolation.
