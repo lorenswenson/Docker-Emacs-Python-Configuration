@@ -13,7 +13,7 @@ Python has a few problems:
 
 Virtual environments try to solve this issue.  However, Docker does this very cleanly and makes it easy to send another developer an already working environment with almost no setup required.  It's a process in the host OS that is isolated from the filesystem by default.  This allows it to be similar to virtual environment but much lighterweight.
 
-This repository includes example configuration files for easily setting up an anaconda based python development environment and setting up Emacs to work as an IDE, all within a docker container mostly isolated from the host OS.
+This repository includes example configuration files for setting up an anaconda based python development environment with Emacs configured as an IDE, all within a docker container mostly isolated from the host OS.
 
 -----
 
