@@ -11,7 +11,7 @@
   '(;;better-defaults
     ;; material-theme
     elpy
-    ;; auto-complete
+    auto-complete
     flycheck
     py-autopep8
     ))
@@ -32,7 +32,7 @@
 
 ;; (elpy-use-ipython)
 
-(setq elpy-rpc-python-command "python3")
+(setq elpy-rpc-python-command "python3.6")
 (setq python-shell-interpreter "~/dev/Docker-Emacs-Python-Configuration/docker_ipython.sh")
 
 ;; (setq python-shell-interpreter-interactive-arg "")
