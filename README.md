@@ -54,14 +54,14 @@ docker_emacs () {
            $@
 }
 
-alias emacs='docker_emacs -geometry 280x80 -fn "terminus-10" -bg black -fg yellow'
+alias pymacs='docker_emacs -geometry 280x80 -fn "terminus-10" -bg black -fg yellow'
 ```
 
 Note: This does a lot:
 * It mounts the user home volume into the docker container which is convenient but is a big hole in the container isolation.
 * It allows the container to use the display which is great for matplotlib.
 * It maps the port 6006 which allows access to tensorboard at http://localhost:6006
-* The alias launches emacs within the container with a specified geometry, font, and colors.
+* The alias `pymacs` launches emacs within the container with a specified geometry, font, and colors.
 * Only mapped directories, namely those with the home directory, will be available.  You'll need to escape emacs to access host OS files outside these mounted volumes.
 * ~/.emacs.d/ will be mounted in the docker container.  This gives access to emacs packages installed on the host OS.
 
