@@ -59,9 +59,9 @@ Cheat sheet for keeping installed images tidy: https://www.digitalocean.com/comm
 
 These include:
 
-Removing dangling images: docker system prune
-Listing images:           docker images -a
-Removing specific image:  docker rmi *image*
+* Removing dangling images: docker system prune
+* Listing images:           docker images -a
+* Removing specific image:  docker rmi *image*
 
 
 
