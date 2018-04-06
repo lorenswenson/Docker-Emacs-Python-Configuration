@@ -21,26 +21,51 @@ Installation instructions:
 
 1) Install docker: 
 
-https://docs.docker.com/install/linux/docker-ce/ubuntu/
+[Docker Install](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 2) Clone this repo:
 
-git clone https://github.com/lorenswenson/Docker-Emacs-Python-Configuration
+`git clone https://github.com/lorenswenson/Docker-Emacs-Python-Configuration`
 
 3) Change to the docker directory and run
 
-docker build -t dockerpythonemacs .
+`docker build -t dockerpythonemacs .`
 
 This will build an image with the latest ubuntu + anaconda distribution + tensorflow.
 Additional python libraries can be added to those found in requirements.txt.
 
 4) Add calling function and alias to ~/.bashrc
 
-Add all the code in .bashrc_snippet to ~/.bashrc
+```
+docker_emacs () {
+    docker run -it \
+           --user $(id -u) \
+           -e DISPLAY=unix$DISPLAY \
+           --workdir=$(pwd) \
+           --volume="/home/$USER:/home/$USER" \
+           --volume="/etc/group:/etc/group:ro" \
+           --volume="/etc/passwd:/etc/passwd:ro" \
+           --volume="/etc/shadow:/etc/shadow:ro" \
+           --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
+           --volume="/tmp:/tmp" \
+           -p 6006:6006 \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           dockerpythonemacs emacs \
+           $@
+}
+
+alias emacs='docker_emacs -geometry 280x80 -fn "terminus-10" -bg black -fg yellow'
+'''
+
+Note: This does a lot:
+* It mounts the user home volume into the docker container which is convenient but is a big hole in the container isolation.
+* It allows the container to use the display which is great for matplotlib.
+* It maps the port 6006 which allows access to tensorboard at http://localhost:6006
+* The alias launches emacs within the container with a specified geometry, font, and colors.
 
 5) Run
 
-source ~/.bashrc
+`source ~/.bashrc`
 
 6) Emacs should now be aliased, so just run emacs from bash
 
