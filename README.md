@@ -71,7 +71,7 @@ Note: This does a lot:
 
 6) Emacs should now be aliased, so just run emacs from bash
 
-7) Emacs should be configured to use Elpy.  A starting point is to add the code in snippet_init.el to ~/.emacs.d/init.el
+7) Emacs should be configured to use [Elpy](https://github.com/jorgenschaefer/elpy/wiki).  A starting point is to add the code in snippet_init.el to ~/.emacs.d/init.el
 
 -----
 
