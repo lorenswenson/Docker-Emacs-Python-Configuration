@@ -69,7 +69,7 @@ Note: This does a lot:
 
 `source ~/.bashrc`
 
-6) Emacs should now be aliased, so just run emacs from bash
+6) Emacs in the docker container should now be aliased, so just run `pymacs` from bash
 
 7) Emacs should be configured to use [Elpy](https://github.com/jorgenschaefer/elpy/wiki).  A starting point is to add the code in snippet_init.el to ~/.emacs.d/init.el
 
