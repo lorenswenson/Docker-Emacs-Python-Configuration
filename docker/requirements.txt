@@ -5,5 +5,5 @@ jedi
 flake8
 autopep8
 yapf
-
+scikit-optimize[plots]
 
