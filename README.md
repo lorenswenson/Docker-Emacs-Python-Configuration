@@ -62,6 +62,8 @@ Note: This does a lot:
 * It allows the container to use the display which is great for matplotlib.
 * It maps the port 6006 which allows access to tensorboard at http://localhost:6006
 * The alias launches emacs within the container with a specified geometry, font, and colors.
+* Only mapped directories, namely those with the home directory, will be available.  You'll need to escape emacs to access host OS files outside these mounted volumes.
+* ~/.emacs.d/ will be mounted in the docker container.  This gives access to emacs packages installed on the host OS.
 
 5) Run
 
@@ -69,8 +71,7 @@ Note: This does a lot:
 
 6) Emacs should now be aliased, so just run emacs from bash
 
-Note that the function in the .bashrc_snippet will map your ~/.emacs.d directory on your host OS.
-
+7) Emacs should be configured to use Elpy.  A starting point is to add the code in snippet_init.el to ~/.emacs.d/init.el
 
 -----
 
