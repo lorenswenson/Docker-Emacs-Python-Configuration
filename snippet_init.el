@@ -1,8 +1,71 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (wombat)))
+ '(inhibit-startup-screen t))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(add-to-list 'default-frame-alist '(background-color . "grey10"))
+                                        ;(set-background-color "grey10" )
+
+
+(global-set-key '[M-up] 'windmove-up)
+(global-set-key '[M-down] 'windmove-down)
+(global-set-key '[M-left] 'windmove-left)
+(global-set-key '[M-right] 'windmove-right)
+(tool-bar-mode -1)
+(toggle-scroll-bar -1)
+(setf parse-sexp-ignore-comments t)
+(setq transient-mark-mode t)
+(show-paren-mode 1)
+(setq use-dialog-box nil)
+(line-number-mode t)
+(column-number-mode t)
+(setq-default indent-tabs-mode nil)
+(setq scroll-step 1)
+(setq scroll-conservatively 1)
+(setq highlight-nonselected-windows nil)
+(setq query-replace-highlight t)
+(setq search-highlight t)
+(ido-mode t)
+(setq-default fill-column 79)
+
+(global-set-key (kbd "s-e") 'remove-outer-s-expression)
+(global-set-key (kbd "s-E") 'undo-remove-outer-s-expression)
+
+;; Add MELPA to get SLIME, STABLE VERSION
+(require 'package) ;; You might already have this line
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize) ;; You might already have this line
+
+;; load emacs 24's package system. Add MELPA repository.
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
+   '("melpa" . "http://melpa.milkbox.net/packages/")
+   t))
+
+(unless (package-installed-p company) (package-install company))
+(add-hook 'after-init-hook 'global-company-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Python
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'package)
 (add-to-list 'package-archives
              '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 (package-initialize)
