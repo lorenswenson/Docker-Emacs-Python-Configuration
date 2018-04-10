@@ -59,7 +59,7 @@
    '("melpa" . "http://melpa.milkbox.net/packages/")
    t))
 
-(unless (package-installed-p company) (package-install company))
+(unless (package-installed-p 'company) (package-install 'company))
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
