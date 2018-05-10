@@ -11,7 +11,7 @@ Python has a few problems:
 * It's messy.  There's *still* discussion about whether to use python 2 or 3.  I mean, this was an issue 5 years ago and it is still not fully resolved.
 * It's strength is the rich ecosystem of libraries.  This is also a weakness as library management can be very complicated.
 
-Virtual environments try to solve this issue.  However, Docker does this very cleanly and makes it easy to send another developer an already working environment with almost no setup required.  It's a process in the host OS that is isolated from the filesystem by default.  This allows it to be similar to virtual environment but much lighterweight.
+Virtual environments try to solve this issue.  However, Docker does this very cleanly and makes it easy to send another developer an already working environment with almost no setup required.  It's a process in the host OS that is isolated from the filesystem by default.  This allows it to be similar to a full virtual machine but much lighterweight.
 
 This repository includes example configuration files for setting up an anaconda based python development environment with Emacs configured as an IDE, all within a docker container mostly isolated from the host OS.
 
