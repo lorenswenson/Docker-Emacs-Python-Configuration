@@ -8,7 +8,7 @@ Docker solves a few typical problems:
 
 Python has a few problems:
 
-* It's messy.  There's *still* discussion about whether to use python 2 or 3.  I mean, this was an issue 5 years ago and it is still not fully resolved.
+* It's messy.  There's *still* discussion about whether to use python 2 or 3.  This has been an outstanding issue for years.
 * It's strength is the rich ecosystem of libraries.  This is also a weakness as library management can be very complicated.
 
 Virtual environments try to solve this issue.  However, Docker does this very cleanly and makes it easy to send another developer an already working environment with almost no setup required.  It's a process in the host OS that is isolated from the filesystem by default.  This allows it to be similar to a full virtual machine but much lighterweight.
@@ -29,7 +29,7 @@ Installation instructions:
 
 3) Change to the docker directory and run
 
-`docker build -t dockerpythonemacs .`
+`sudo docker build -t dockerpythonemacs .`
 
 This will build an image with the latest ubuntu + anaconda distribution + tensorflow.
 Additional python libraries can be added to those found in requirements.txt.
