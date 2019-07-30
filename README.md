@@ -6,12 +6,7 @@ Docker solves a few typical problems:
 * You develop some code and want to send it to another developer.  However, it has a large set of dependencies.  It would be nice to just send the code along with the environment rather than trying to list every library and its version required to run the code.
 * You want to just try out some software without worrying that it will not cleanly uninstall and pollute your OS.
 
-Python has a few problems:
-
-* It's messy.  There's *still* discussion about whether to use python 2 or 3.  This has been an outstanding issue for years.
-* It's strength is the rich ecosystem of libraries.  This is also a weakness as library management can be very complicated.
-
-Virtual environments try to solve this issue.  However, Docker does this very cleanly and makes it easy to send another developer an already working environment with almost no setup required.  It's a process in the host OS that is isolated from the filesystem by default.  This allows it to be similar to a full virtual machine but much lighterweight.
+Virtual environments try to solve some of these issue.  However, Docker does this very cleanly and makes it easy to send another developer an already working environment with almost no setup required.  It's a process in the host OS that is isolated from the filesystem by default.  This allows it to be similar to a full virtual machine but much lighterweight.
 
 This repository includes example configuration files for setting up an anaconda based python development environment with Emacs configured as an IDE, all within a docker container mostly isolated from the host OS.
 
