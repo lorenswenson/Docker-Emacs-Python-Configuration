@@ -7,10 +7,8 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 ADD . /app
 
-# ENV DEBIAN_FRONTEND noninteractive
-# RUN apt-get update && \
-#     apt-get -y install gcc mono-mcs && \
-#     rm -rf /var/lib/apt/lists/*
+# Add pip
+RUN apt-get update && apt-get install -y python-pip
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
